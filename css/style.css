@@ -6,6 +6,10 @@ html {
   font-size: 62.5%;
 }
 
+body.open {
+  overflow-y: hidden;
+}
+
 body,
 a {
   color: #dbdbdb;
@@ -20,19 +24,23 @@ body {
   );
   background-repeat: no-repeat;
   background-size: 100vw 100vh;
+  background-attachment: fixed;
+  line-height: 1.5;
 }
 
 h1,
 h2,
 h3,
 ul li,
-a {
+a,
+p {
   font-family: "Roboto Mono", monospace;
 }
 
 p {
-  font-family: "Open Sans", Arial, Helvetica, sans-serif;
   font-size: 1.52rem;
+  padding: 0px;
+  margin: 0px;
 }
 
 h1 {
@@ -80,6 +88,7 @@ h3 {
 ul {
   position: absolute;
   bottom: 0px;
+  margin: 0px;
   left: 0;
   display: flex;
   flex-direction: column;
@@ -185,4 +194,88 @@ nav ul li a:focus {
 
 .open #menu-burger::after {
   transform: translate(15px, 0) rotate(-45deg);
+}
+
+/** Main section **/
+main {
+  margin-top: 40vh;
+  margin: 40vh auto 0 auto;
+  padding: 10px;
+  width: 90vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.method-call {
+  color: #e9bc2a;
+}
+
+/** sections **/
+section {
+  font-family: "Roboto Mono", monospace;
+}
+
+section h2 {
+  font-size: 4rem;
+  font-family: inherit;
+}
+
+/** is section **/
+
+section#is {
+  min-height: 60vh;
+  font-family: "Roboto Mono", monospace;
+}
+
+section#is h2 {
+  font-size: 4rem;
+  font-family: inherit;
+}
+
+section#is p {
+  font-size: 1.8rem;
+  font-family: inherit;
+  color: rgb(110, 110, 110);
+}
+
+section#is p#name {
+  color: #b38c0f;
+}
+
+/** work section **/
+section#work article {
+  padding: 0px 0px 30px 0px;
+  border-bottom: 3px solid white;
+}
+
+section#work article h3,
+section#work article p,
+section#work article a {
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+  font-weight: 400;
+}
+
+section#work article h3 {
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+section#work article p {
+  margin-top: 10px;
+  margin-bottom: 12px;
+}
+
+.project-links {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+section#work article a {
+  text-decoration: none;
+  font-size: 1.5rem;
+  margin-right: 15px;
+  padding: 8px;
+  border: 1px solid #df6620;
+  border-radius: 5px;
 }
