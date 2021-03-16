@@ -6,6 +6,11 @@ html {
   font-size: 62.5%;
 }
 
+body,
+a {
+  color: #dbdbdb;
+}
+
 body {
   background: rgb(23, 27, 27);
   background: radial-gradient(
@@ -13,8 +18,8 @@ body {
     rgba(23, 27, 27, 1) 0%,
     rgb(7, 7, 7) 100%
   );
-  min-height: 100vh;
-  color: #dbdbdb;
+  background-repeat: no-repeat;
+  background-size: 100vw 100vh;
 }
 
 h1,
@@ -42,8 +47,58 @@ h3 {
   font-size: 1.953rem;
 }
 
+/* Ul menu */
+ul {
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10;
+  background-color: rgba(7, 7, 7, 0.8);
+  list-style: none;
+  padding: 0px;
+  transform: translateX(-110vw);
+  transition: all 0.5s ease;
+}
+
+ul.open {
+  transform: translateX(0);
+  transition: all 0.5s ease;
+}
+
+nav ul li a {
+  text-align: right;
+}
+
+nav ul li a#selected-item {
+  color: #e9bc2a;
+}
+
+nav ul li a#selected-item::after {
+  content: " //Selected";
+  color: #18942c;
+}
+
 ul li {
   font-size: 2rem;
+}
+
+nav ul li a {
+  display: block;
+  padding: 20px;
+  margin: 10px 0px;
+  text-decoration: none;
+  transition: color 0.5s ease;
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+  color: #e9bc2a;
+  transition: color 0.5s ease;
 }
 
 /* Menu btn */
@@ -59,12 +114,13 @@ ul li {
   width: 32px;
   height: 32px;
   transition: all 0.5s ease;
+  z-index: 11;
 }
 
 #menu-burger {
   width: 32px;
   height: 4px;
-  background: white;
+  background: #dbdbdb;
   border-radius: 4px;
   transition: all 0.5s ease;
 }
@@ -75,7 +131,7 @@ ul li {
   position: absolute;
   width: 32px;
   height: 4px;
-  background: white;
+  background: #dbdbdb;
   border-radius: 4px;
   transition: all 0.5s ease;
 }
