@@ -48,6 +48,35 @@ h3 {
 }
 
 /* Ul menu */
+@keyframes menuOpen {
+  0% {
+    transform: translateX(-110vw);
+  }
+  25% {
+    transform: translateX(0%);
+  }
+  30% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes menuClose {
+  0% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+  70% {
+    opacity: 0;
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-110vw);
+  }
+}
+
 ul {
   position: absolute;
   bottom: 0px;
@@ -58,16 +87,17 @@ ul {
   width: 100vw;
   height: 100vh;
   z-index: 10;
-  background-color: rgba(7, 7, 7, 0.8);
+  background-color: rgba(7, 7, 7);
   list-style: none;
   padding: 0px;
   transform: translateX(-110vw);
-  transition: all 0.5s ease;
+  opacity: 0;
+  animation: menuClose 1s forwards;
 }
 
 ul.open {
   transform: translateX(0);
-  transition: all 0.5s ease;
+  animation: menuOpen 1s forwards;
 }
 
 nav ul li a {
