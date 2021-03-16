@@ -45,3 +45,58 @@ h3 {
 ul li {
   font-size: 2rem;
 }
+
+/* Menu btn */
+#menu-btn {
+  position: absolute;
+  cursor: pointer;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  transition: all 0.5s ease;
+}
+
+#menu-burger {
+  width: 32px;
+  height: 4px;
+  background: white;
+  border-radius: 4px;
+  transition: all 0.5s ease;
+}
+
+#menu-burger::before,
+#menu-burger::after {
+  content: "";
+  position: absolute;
+  width: 32px;
+  height: 4px;
+  background: white;
+  border-radius: 4px;
+  transition: all 0.5s ease;
+}
+
+#menu-burger::before {
+  transform: translateY(-8px);
+}
+
+#menu-burger::after {
+  transform: translateY(8px);
+}
+
+#menu-btn.open #menu-burger {
+  transform: translateX(-15px);
+  background: transparent;
+}
+
+.open #menu-burger::before {
+  transform: translate(15px, 0) rotate(45deg);
+}
+
+.open #menu-burger::after {
+  transform: translate(15px, 0) rotate(-45deg);
+}
